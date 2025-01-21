@@ -1,3 +1,4 @@
+
 import uuid
 from django.db import models
 
@@ -65,6 +66,4 @@ class Admin(models.Model):
     Local_Government = models.CharField(max_length=50)
     Country_Of_Origin = models.CharField(max_length=50)
     Town_Of_Origin = models.CharField(max_length=50)
-
-
 
