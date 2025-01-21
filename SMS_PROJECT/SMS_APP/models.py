@@ -25,7 +25,7 @@ class Student(models.Model):
     Country_Of_Origin = models.CharField(max_length=50)
     Town_Of_Origin = models.CharField(max_length=50)
     Category = models.CharField(max_length=50)
-    Post = models.CharField(max_length=50)
+    Post_In_School = models.CharField(max_length=50)
     Gender = models.CharField(max_length=10)
     Health_Issues = models.TextField()
     Registration_Date = models.DateTimeField(auto_now_add=True)
@@ -67,4 +67,4 @@ class Admin(models.Model):
     Town_Of_Origin = models.CharField(max_length=50)
 
 
-    
+
