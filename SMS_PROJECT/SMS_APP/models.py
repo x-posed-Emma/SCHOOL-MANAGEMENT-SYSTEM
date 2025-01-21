@@ -67,3 +67,18 @@ class Admin(models.Model):
     Country_Of_Origin = models.CharField(max_length=50)
     Town_Of_Origin = models.CharField(max_length=50)
 
+class News(models.Model):
+    News_Title = models.CharField(max_length=100)
+    News_Image = models.ImageField(upload_to=)
+    News_Body = models.TextField()
+    Comment = models.TextField()
+    Date = models.DateTimeField(auto_now_add=True)
+    Author = models.ForeignKey('Student', on_delete=models.CASCADE)
+
+class Annoncement(models.Model):
+    Title = models.CharField(max_length=100)
+    Image = models.ImageField(upload_to=)
+    Body = models.TextField()
+    Date = models.DateTimeField(auto_now_add=True)
+    Admin_Author = models.ForeignKey('Admin', on_delete=models.CASCADE)
+    Teacher_Author = models.ForeignKey('Admin', on_delete=models.CASCADE)
