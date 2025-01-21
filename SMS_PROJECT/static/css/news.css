@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main header styles */
+.main-header {
+    background: #003366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-bar ul li {
+    display: inline;
+}
+
+.nav-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+.nav-bar ul li a:hover, .nav-bar ul li a.active {
+    background: #0055a5;
+    border-radius: 5px;
+}
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 25%;
+    background: #f4f4f4;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar .search-bar input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.sidebar .search-bar button {
+    padding: 5px 10px;
+    background: #003366;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar .search-bar button:hover {
+    background: #0055a5;
+}
+
+.sidebar h3 {
+    font-size: 1.5em;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.sidebar .quick-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .quick-links li {
+    margin: 10px 0;
+}
+
+.sidebar .quick-links li a {
+    color: #003366;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sidebar .quick-links li a:hover {
+    color: #0055a5;
+}
+
+/* News container styles */
+.news-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Footer styles */
+.main-footer {
+    background: #003366;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.main-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.main-footer .footer-content .quick-links-footer ul {
+    list-style: none;
+}
+
+.main-footer .footer-content ul li {
+    margin: 5px 0;
+}
+
+.main-footer .footer-content a {
+    color: #ffffff;
+    text-decoration: underline;
+}
