@@ -73,7 +73,9 @@ class News(models.Model):
     News_Body = models.TextField()
     Comment = models.TextField()
     Date = models.DateTimeField(auto_now_add=True)
-    # Author = models.ForeignKey('Student', on_delete=models.CASCADE)
+    
+
+# Author = models.ForeignKey('Student', on_delete=models.CASCADE)
 
 class Annoncement(models.Model):
     Title = models.CharField(max_length=100)

@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Main header styles */
 .main-header {
     background: #003366;
     color: #ffffff;
@@ -12,6 +11,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    height: 100px;
+    background-image: url("../images/santi-vedri-O5EMzfdxedg-unsplash.jpg") ;
+    background-size: cover;        
+    background-position: center;  
+    background-repeat: no-repeat;
 }
 
 .logo img {
@@ -22,6 +26,7 @@
     list-style-type: none;
     display: flex;
     gap: 15px;
+    font-size: 20px;
 }
 
 .nav-bar ul li {
@@ -41,13 +46,11 @@
     border-radius: 5px;
 }
 
-/* Main content layout */
 .main-content {
     display: flex;
     padding: 20px;
 }
 
-/* Sidebar styles */
 .sidebar {
     width: 25%;
     background: #f4f4f4;
@@ -109,15 +112,7 @@
     color: #0055a5;
 }
 
-/* News container styles */
-.news-container {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
 
-/* Footer styles */
 .main-footer {
     background: #003366;
     color: #ffffff;
@@ -141,4 +136,28 @@
 .main-footer .footer-content a {
     color: #ffffff;
     text-decoration: underline;
+}
+#news_img{
+    width: 700px;
+    text-align: center;
+    align-self: center;
+    height: 400px;
+    image-rendering: optimizeQuality;
+    image-orientation: from-image;
+}
+#news_p{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.news-item{
+    border-bottom: 2px solid rgb(6, 6, 50);
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#authorinfo{
+    display: flex;
 }

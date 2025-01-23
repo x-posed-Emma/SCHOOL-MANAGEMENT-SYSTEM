@@ -7,10 +7,9 @@ from .models import News
 # @method_decorator(login_required, name='dispatch')
 class NewsListView(ListView):
     model = News
-    template_name = 'sms_app/newsview.html'  # Define your template name here
+    template_name = 'sms_app/news.html'  # Define your template name here
     context_object_name = 'news_list'
 
     def get_queryset(self):
         # Filter news to ensure each has an author and a date
         return News.objects.filter(Date__isnull=False).order_by('-Date')
-# Author__isnull=False,
