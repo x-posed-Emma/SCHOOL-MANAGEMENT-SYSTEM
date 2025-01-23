@@ -14,7 +14,7 @@ class Student(models.Model):
     )
     First_Name = models.CharField(max_length=20)
     Last_Name = models.CharField(max_length=20)
-    Age = models.IntegerField(max_length=5)
+    Age = models.IntegerField()
     Profile_Picture = models.ImageField(upload_to="student_profile/")
     Student_Class = models.CharField(max_length=10)
     Student_Email = models.EmailField()
@@ -46,7 +46,7 @@ class Teacher(models.Model):
     Profile_Picture = models.ImageField(upload_to='teacher_profile/')
     Subject = models.CharField(max_length=20)
     Post = models.CharField(max_length=20)
-    Age = models.IntegerField(max_length=15)
+    Age = models.IntegerField()
     Next_Of_Kin = models.CharField(max_length=100)
     Phone_Number= models.CharField(max_length=11)
     State_Of_Origin = models.CharField(max_length=50)
@@ -69,16 +69,16 @@ class Admin(models.Model):
 
 class News(models.Model):
     News_Title = models.CharField(max_length=100)
-    News_Image = models.ImageField(upload_to=)
+    News_Image = models.ImageField(upload_to="news_image/")
     News_Body = models.TextField()
     Comment = models.TextField()
     Date = models.DateTimeField(auto_now_add=True)
-    Author = models.ForeignKey('Student', on_delete=models.CASCADE)
+    # Author = models.ForeignKey('Student', on_delete=models.CASCADE)
 
 class Annoncement(models.Model):
     Title = models.CharField(max_length=100)
-    Image = models.ImageField(upload_to=)
+    Image = models.ImageField(upload_to="announcement_image/")
     Body = models.TextField()
     Date = models.DateTimeField(auto_now_add=True)
     Admin_Author = models.ForeignKey('Admin', on_delete=models.CASCADE)
-    Teacher_Author = models.ForeignKey('Admin', on_delete=models.CASCADE)
+    Teacher_Author = models.ForeignKey('Teacher', on_delete=models.CASCADE)

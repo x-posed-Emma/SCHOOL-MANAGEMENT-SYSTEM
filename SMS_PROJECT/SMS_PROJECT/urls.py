@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('SMS_APP/', include('SMS_APP.urls')),
+    path('admin/', admin.site.urls),  
+    path('SMS_APP/', include('SMS_APP.urls')), 
+    path('', include('SMS_APP.urls')),  
 ]
