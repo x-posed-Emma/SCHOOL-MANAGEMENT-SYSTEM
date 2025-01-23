@@ -8,5 +8,5 @@ class Productss(admin.ModelAdmin):
     list_display = ("News_Title", "News_Image", "News_Body", "Date")
 
 @admin.register(Annoncement)
-class Announcement(admin.ModelAdmin):
+class Announcements(admin.ModelAdmin):
     list_display = ("Title",  "Body", "Date")

@@ -9,28 +9,25 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/announcement.css' %}">
 </head>
-    <body>
-            
-    
-            <div class="header">
-                <h1>Welcome to the Student Announcement Page</h1>
-            </div>
-            
-            
-             <div class="container">
-                <h2>Latest Announcements</h2>
-                {% for announce in announcement_list %}
-                <div class="announcement">
-                    <h3>{{ announce.Title }}</h3>
-                    <p>{{ announce.Body }}</p>
-                    <h4>AUTHOR : <strong> {{ announce.Author }} </strong> </h4>
-                    <h4>DATE: </strong> {{ announce.Date }} </strong></h4>
-                </div>
-                {% endfor %}
-             </div>
-                
-            <div class="footer">
-                <p>&copy; 2025 School Management System. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
-            </div>
-    </body>
+<body>
+    <div class="header">
+        <h1>Welcome to the Student Announcement Page</h1>
+    </div>
+
+    <div class="container">
+        <h2>Latest Announcements</h2>
+        {% for announce in announcement_list %}
+        <div class="announcement">
+            <h3>{{ announce.Title }}</h3>
+            <p>{{ announce.Body }}</p>
+            <h4>AUTHOR: <strong>{{ announce.Author }}</strong></h4>
+            <h4>DATE: <strong>{{ announce.Date }}</strong></h4>
+        </div>
+        {% endfor %}
+    </div> <!-- Closing the container div -->
+
+    <div class="footer">
+        <p>&copy; 2025 School Management System. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
+</body>
 </html>  
