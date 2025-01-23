@@ -82,5 +82,5 @@ class Annoncement(models.Model):
     Image = models.ImageField(upload_to="announcement_image/")
     Body = models.TextField()
     Date = models.DateTimeField(auto_now_add=True)
-    Admin_Author = models.ForeignKey('Admin', on_delete=models.CASCADE)
-    Teacher_Author = models.ForeignKey('Teacher', on_delete=models.CASCADE)
+    # Admin_Author = models.ForeignKey('Admin', on_delete=models.CASCADE)
+    # Teacher_Author = models.ForeignKey('Teacher', on_delete=models.CASCADE)
