@@ -19,6 +19,5 @@ class AnnouncementListView(ListView):
     model = Annoncement
     template_name = 'sms_app/announcement.html'  # Define your template name here
     context_object_name = 'announcement_list'
-
     def get_queryset(self):
         return Annoncement.objects.filter(Date__isnull=False).order_by('-Date')
