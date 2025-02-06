@@ -6,31 +6,48 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Announcements</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/announcement.css' %}">
 </head>
     <body>
-            
-    
+        <header class="main-header">
+            <div class="divide">
+                <div class="logo">
+                    <img src="{% static 'images/' %}">
+                </div>
+                <nav class="nav-bar">
+                    <ul>
+                        <li><a href="news.html" class="active">News</a></li>
+                        <li><a href="newsview.html">About Us</a></li>
+                        <li><a href="announcement.html">Announcements/Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>    
             <div class="header">
                 <h1>Welcome to the Student Announcement Page</h1>
             </div>
+        </header>   
+    
+        <!-- <div class="header">
+            <h1>Welcome to the Student Announcement Page</h1>
+        </div> -->
             
             
-             <div class="container">
-                <h2>Latest Announcements</h2>
-                {% for announce in announcement_list %}
-                <div class="announcement">
-                    <h3>{{ announce.Title }}</h3>
-                    <p>{{ announce.Body }}</p>
-                    <h4>AUTHOR : </strong> {{ news.Author }} </h4>
-                    <h4>DATE: </strong> {{ news.Date }} </h4>
-                </div>
-                {% endfor %}
+        <div class="container">
+            <h2>Latest Announcements</h2>
+            {% for announce in announcement_list %}
+            <div class="announcement">
+                <h3>{{ announce.Title }}</h3>
+                <p>{{ announce.Body }}</p>
+                <h4>AUTHOR : </strong> {{ announce.Author }} </h4>
+                <h4>DATE: </strong> {{ announce.Date }} </h4>
+            </div>
+            {% endfor %}
         
                 
-            <div class="footer">
-                <p>&copy; 2025 School Management System. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
-            </div>
+        <div class="footer">
+            <p>&copy; 2025 School Management System. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+        </div>
     </body>
 </html>  

@@ -1,0 +1,149 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px 50px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="textarea"],
+input[type="select"],
+input[type="number"],
+input[type="option"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="textarea"]:focus,
+input[type="select"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+
+.radio-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+
+
+
+.radio-group label::before {
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+
+
+.radio-group input[type="radio"]:checked + label::before {
+    background: #fff;
+    box-shadow: inset 0 0 0 4px #007bff;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.errorlist {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.custom-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    appearance: none; 
+    background-color: white;
+    cursor: pointer;
+}
+
+.custom-select::-ms-expand {
+    display: none; 
+}
+
+.custom-select option {
+    background-color: white;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.custom-select option:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.custom-textarea {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 14px; 
+    font-family: Arial, sans-serif; 
+    resize: vertical; 
+    min-height: 100px; 
+    background-color: white; 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.custom-textarea:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    outline: none; 
+}
+
+.custom-textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.custom-textarea:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
