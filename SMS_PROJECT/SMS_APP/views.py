@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView
+from django.views.generic import ListView,TemplateView
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import UserRegistrationForm, StudentForm, TeacherForm
 from .models import Student, Teacher, CustomUser, News, Annoncement
 
@@ -23,9 +24,46 @@ class AnnouncementListView(ListView):
     context_object_name = 'announcement_list'
 
     
+# class StudentDashboard(ListView):
+#     model = Student  
+#     template_name = 'sms_app/student_dash.html'
+#     context_object_name = 'students'
+
     
-# def get_queryset(self):
-    #     return Annoncement.objects.filter(Date__isnull=False).order_by('-Date')
+class StudentDashboard( TemplateView):
+    template_name = 'sms_app/student_dash.html'
+
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('smsapp1:register') 
+
+        try:
+            student = Student.objects.get(user=request.user)
+        except Student.DoesNotExist:
+            return redirect('completeprofile')  # Replace with your profile creation URL
+
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        student = Student.objects.get(user=user)
+
+
+        profile_picture_url = student.Profile_Picture.url if student.Profile_Picture else "/static/default_profile.png"
+
+        context.update({
+            "username": user.username,
+            "image": profile_picture_url,
+            "grade": student.grade,                   
+            "gender": student.Gender,                
+            "age": student.Age,        
+            "email": user.email,  
+            "phone_number": student.Guardian_phone_Number,                       
+        })
+
+        return context
 
 
 def register(request):
@@ -40,7 +78,7 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'forms/register.html', {'form': form})
-
+         
 def complete_profile(request):
     user_id = request.session.get('user_id')
     if not user_id:
